@@ -8,8 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Angular Material imports
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+
+
+
+
 import { DeveloperComponent } from './developer/developer.component';
 import { ProjectComponent } from './project/project.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 @NgModule({
@@ -17,6 +25,7 @@ import { ProjectComponent } from './project/project.component';
     AppComponent,
     DeveloperComponent,
     ProjectComponent,
+    LandingPageComponent,
     
   ],
   imports: [
@@ -24,7 +33,10 @@ import { ProjectComponent } from './project/project.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

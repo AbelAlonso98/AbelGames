@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RockPaperScissorsComponent } from './games/rock-paper-scissors/rock-paper-scissors.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { ProjectComponent } from './project/project.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,9 @@ const routes: Routes = [
 },
 {
   path: 'project', component: ProjectComponent
+},
+{
+  path: '', component: LandingPageComponent
 }
 
 ];
