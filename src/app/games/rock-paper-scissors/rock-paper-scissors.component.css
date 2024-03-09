@@ -53,9 +53,18 @@ h1{
 }
 .player .machine{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
+.machineHearts{
+    display: flex;
+    flex-direction: row;
+}
+.playerHearts{
+    display: flex;
+    flex-direction: row;
+}
+
 .main{
     width: 100vw;
     height: 95vh;

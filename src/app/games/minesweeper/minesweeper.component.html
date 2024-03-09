@@ -1,0 +1,18 @@
+<div class="master">
+    <div class="game">
+      <h1>{{msg}}</h1>
+      <div class="field">
+        <div class="row" *ngFor="let row of content; let i = index;">
+          <div class="space" *ngFor="let cell of row; let j = index;" (click)="step(i, j)">
+            <div class="step">
+              <h1 *ngIf="spaces[i][j] && content[i][j] !== -1">{{content[i][j]}}</h1>
+              <img *ngIf="spaces[i][j] && content[i][j] === -1" src="https://www.svgrepo.com/show/79567/bomb.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-fab color="primary" [disabled]="gameover" (click)="ngOnInit()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </div>
+  </div>

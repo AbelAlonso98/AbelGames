@@ -7,17 +7,22 @@ import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 import { TicTacToeSquareComponent } from './tic-tac-toe-square/tic-tac-toe-square.component';
 
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
+import { MinesweeperComponent } from './minesweeper/minesweeper.component';
 
 @NgModule({
   declarations: [
     RockPaperScissorsComponent,
     TicTacToeComponent,
-    TicTacToeSquareComponent
+    TicTacToeSquareComponent,
+    MinesweeperComponent
   ],
   imports: [
     CommonModule,
     GamesRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class GamesModule { }
