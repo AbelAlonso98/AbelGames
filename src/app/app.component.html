@@ -10,7 +10,11 @@
       </button>
   </div>
 </mat-toolbar>
-<app-login *ngIf="changed == false" (nickEntered)="recieveNick($event)" ></app-login>
-<div class="routerContainer">
-  <router-outlet></router-outlet>
-</div>
+<app-login *ngIf="changed == false; else games" (nickEntered)="recieveNick($event)" ></app-login>
+
+
+<ng-template #games>
+  <div class="routerContainer">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>

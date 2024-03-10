@@ -1,5 +1,5 @@
 <div class="player" *ngIf="winner=='none'; else gameReset">
-    <h1>Tic, tac, toe</h1>
+    <h1>Tic, tac, toe - {{name}}</h1>
     <div class="main">
         <app-tic-tac-toe-square *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
         </app-tic-tac-toe-square>

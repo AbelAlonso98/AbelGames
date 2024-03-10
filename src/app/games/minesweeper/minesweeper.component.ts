@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { min } from 'rxjs';
 
 @Component({
   selector: 'app-minesweeper',
@@ -14,6 +16,20 @@ export class MinesweeperComponent implements OnInit{
   neighbours: number[][] = [[0,1],[0,-1],[1,0],[1,1],[1,-1],[-1,0],[-1,1],[-1,-1]];
   gameover: boolean = false
   msg: String = "Don't click the mines!"
+  name: string = "";
+  win: boolean = false;
+  aux: number = 0;
+  mineCount: number = 0;
+
+  constructor(private route:ActivatedRoute){
+
+    route.params.subscribe(
+      params=>{
+        this.name = params["nick"];
+      }
+    );
+
+  }
 
   ngOnInit(): void {
     // We initialize everything again cause when we click reset we
@@ -24,12 +40,17 @@ export class MinesweeperComponent implements OnInit{
     this.content.forEach(row => row.fill(0));
     this.gameover = false;
     this.msg = "Don't click the mines!"
+    this.win = false;
+    this.mineCount = 0;
+    
     
     // We set 15% chance to be a mine.
     for(let i = 0; i < 10;i++){
       for(let j=0;j<10;j++){
-        if(Math.random() < 0.15)
-        this.content[i][j] = -1;
+        if(Math.random() < 0.05){
+          this.content[i][j] = -1;
+          this.mineCount++;
+      }
       }
     }
 
@@ -75,6 +96,7 @@ export class MinesweeperComponent implements OnInit{
         this.propagate(row, col);
       }
     }
+    this.checkWin();
   }
 
   // This simply checks every single neighbour and clicks it
@@ -87,5 +109,20 @@ export class MinesweeperComponent implements OnInit{
         this.step(ni, nj);
       }
     })
+  }
+
+  checkWin(){
+    
+    this.aux = 0;
+    for(let i = 0; i < 10; i++){
+      for(let j = 0; j < 10; j++){
+        if(!this.spaces[i][j]){
+          this.aux++;
+        }
+      }
+    }
+    if(this.aux == this.mineCount){
+      this.win = true;
+    }
   }
 }

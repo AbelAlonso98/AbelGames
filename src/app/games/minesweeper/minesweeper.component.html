@@ -1,6 +1,6 @@
-  <div class="game">
-    <h1>{{msg}}</h1>
-    <div class="field" *ngIf="!gameover">
+  <div class="game"  *ngIf="!gameover && !win; else finish">
+    <h1>Hey {{name}}! - {{msg}} - Mine Number: {{mineCount}}</h1>
+    <div class="field">
       <div class="row" *ngFor="let row of content; let i = index;">
         <div class="space" *ngFor="let cell of row; let j = index;">
           <app-minesweeper-square [clicked]="spaces[i][j]" [value]="content[i][j]" (click)="step(i,j)"></app-minesweeper-square>
@@ -11,3 +11,11 @@
       <mat-icon>refresh</mat-icon>
     </button>
   </div>
+  <ng-template #finish>
+    <div class="game">
+      <p *ngIf="win">{{name}} has won!</p>
+      <p *ngIf="gameover">{{name}} has lost!</p>
+      <button mat-raised-button color="primary" (click)="ngOnInit()">RESET</button>
+    </div>
+    
+  </ng-template>

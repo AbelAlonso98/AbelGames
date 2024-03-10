@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tic-tac-toe',
@@ -11,6 +12,17 @@ export class TicTacToeComponent implements OnInit{
   winner: string = 'X';
   machine: number = 0;
   full: boolean = false;
+  name: string ="";
+
+  constructor(private route:ActivatedRoute){
+
+    route.params.subscribe(
+      params=>{
+        this.name = params["nick"];
+      }
+    );
+
+  }
 
   ngOnInit(): void {
     this.newGame();
