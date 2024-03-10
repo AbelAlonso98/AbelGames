@@ -26,7 +26,7 @@ export class MinesweeperComponent implements OnInit{
     this.msg = "Don't click the mines!"
     
     // We set 15% chance to be a mine.
-    for(let i=0; i<10;i++){
+    for(let i = 0; i < 10;i++){
       for(let j=0;j<10;j++){
         if(Math.random() < 0.15)
         this.content[i][j] = -1;
@@ -48,8 +48,8 @@ export class MinesweeperComponent implements OnInit{
       for(let j = 0; j < 10; j++){
         if(this.content[i][j] == -1){
           this.neighbours.forEach(([x, y]) => {
-            const ni = i+x;
-            const nj = j+ y;
+            const ni = i + x;
+            const nj = j + y;
             if(ni>=0 && ni<10 && nj>=0 && nj<10 && this.content[ni][nj] == -1)
               this.content[i][j]++;
           })
@@ -70,8 +70,9 @@ export class MinesweeperComponent implements OnInit{
       if(this.content[row][col] == -1){
         this.msg = "You have stepped on a mine, you are dead!"
         this.gameover = true;
-      } else if(this.content[row][col] == 0)
-      this.propagate(row, col);
+      } else if(this.content[row][col] == 0){
+        this.propagate(row, col);
+      }
     }
   }
 

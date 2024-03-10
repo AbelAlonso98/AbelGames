@@ -10,13 +10,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 
 import { MinesweeperComponent } from './minesweeper/minesweeper.component';
+import { MinesweeperSquareComponent } from './minesweeper-square/minesweeper-square.component';
 
 @NgModule({
   declarations: [
     RockPaperScissorsComponent,
     TicTacToeComponent,
     TicTacToeSquareComponent,
-    MinesweeperComponent
+    MinesweeperComponent,
+    MinesweeperSquareComponent
   ],
   imports: [
     CommonModule,
