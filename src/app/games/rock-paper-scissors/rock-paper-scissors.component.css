@@ -39,18 +39,20 @@ h1{
     height: 50%;
 }
 
-.contenedor{
-    background-color: bisque;
+.contenedor, .contenedorFinJuego{
+    background-color: #9EB7E5;
     width: 70vw;
     height: 70vh;
     font-family: Papyrus;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 5px;
     border: 2px solid black;
 }
+
 .player .machine{
     display: flex;
     flex-direction: row;
@@ -66,8 +68,7 @@ h1{
 }
 
 .main{
-    width: 100vw;
-    height: 95vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,6 +87,8 @@ h1{
     font-family: Papyrus;
     font-size: large;
     font-weight: bold;
+    background-color: #3F51B5;
+    color: white;
 }
 
 .blankDiv{

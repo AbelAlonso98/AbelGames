@@ -1,6 +1,6 @@
 <div class="main">
     <div *ngIf="vidasMaquina>0 && vidasJugador>0; else gameReset" class="contenedor">
-        <h1>M&aacute;quina</h1>
+        <h1>MACHINE</h1>
         <div class="machineHearts">
             <img *ngIf="vidasMaquina>=5" class="heart" src="assets/img/heart.png" />
             <img *ngIf="vidasMaquina>=4" class="heart" src="assets/img/heart.png" />
@@ -46,9 +46,9 @@
 
 <ng-template #gameReset>
 
-    <div class="contenedor">
-        <h1 *ngIf="vidasJugador==0"> MAQUINA GANA </h1>
-        <h1 *ngIf="vidasMaquina==0"> JUGADOR GANA </h1>
+    <div class="contenedorFinJuego">
+        <h1 *ngIf="vidasJugador==0"> YOU LOSE </h1>
+        <h1 *ngIf="vidasMaquina==0"> YOU WIN</h1>
         <button (click)="this.reset()" class="resetButton">
             Reiniciar
         </button>

@@ -6,6 +6,7 @@ import { DeveloperComponent } from './developer/developer.component';
 import { ProjectComponent } from './project/project.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MinesweeperComponent } from './games/minesweeper/minesweeper.component';
+import { TicTacToeComponent } from './games/tic-tac-toe/tic-tac-toe.component';
 
 
 const routes: Routes = [
@@ -17,10 +18,10 @@ const routes: Routes = [
   path: 'games/rock-paper-scissors/:nick', component: RockPaperScissorsComponent
 },
 {
-    path: 'games/tic-tac-toe', component: RockPaperScissorsComponent
+    path: 'games/tic-tac-toe/:nick', component: TicTacToeComponent
 },
 {
-  path: 'games/minesweeper', component: MinesweeperComponent
+  path: 'games/minesweeper/:nick', component: MinesweeperComponent
 },
 {
   path: 'developer', component: DeveloperComponent

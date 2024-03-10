@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RockPaperScissorsComponent {
   images: string[] = ["assets/img/interrogacion.png", "assets/img/piedra.png", "assets/img/papel.png", "assets/img/tijera.png"];
-  msg: String = "Aprieta una imagen para jugar";
+  msg: String = "CLICK A BOTTOM BUTTON TO START";
   machine: number = 0;
   vidasJugador: number = 5;
   vidasMaquina: number = 5;
@@ -64,15 +64,15 @@ export class RockPaperScissorsComponent {
 
     switch (this.machine) {
       case 1:
-        this.msg = pick == 1 ? "Empate" : pick == 2 ? "Jugador gana" : "Maquina gana";
+        this.msg = pick == 1 ? "Empate" : pick == 2 ? "YOU WIN" : "YOU LOSE";
         pick == 1 ? "" : pick == 2 ? this.vidasMaquina-- : this.vidasJugador--;
         break;
       case 2:
-        this.msg = pick == 2 ? "Empate" : pick == 3 ? "Jugador gana" : "Maquina gana";
+        this.msg = pick == 2 ? "Empate" : pick == 3 ? "YOU WIN" : "YOU LOSE";
         pick == 2 ? "" : pick == 3 ? this.vidasMaquina-- : this.vidasJugador--;
         break;
       case 3:
-        this.msg = pick == 3 ? "Empate" : pick == 1 ? "Jugador gana" : "Maquina gana";
+        this.msg = pick == 3 ? "Empate" : pick == 1 ? "YOU WIN" : "YOU LOSE";
         pick == 3 ? "" : pick == 1 ? this.vidasMaquina-- : this.vidasJugador--;
         break;
     }
@@ -80,6 +80,6 @@ export class RockPaperScissorsComponent {
   reset() {
     this.vidasJugador = 5;
     this.vidasMaquina = 5;
-    this.msg = "Aprieta una imagen para jugar"
+    this.msg = "CLICK A BOTTOM BUTTON TO START"
   }
 }

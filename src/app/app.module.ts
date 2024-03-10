@@ -12,12 +12,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 
+import { FormsModule } from '@angular/forms';
+
 
 
 
 import { DeveloperComponent } from './developer/developer.component';
 import { ProjectComponent } from './project/project.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -26,6 +29,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     DeveloperComponent,
     ProjectComponent,
     LandingPageComponent,
+    LoginComponent,
     
   ],
   imports: [
@@ -36,7 +40,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

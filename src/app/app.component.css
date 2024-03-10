@@ -11,4 +11,10 @@
 .routerContainer{
     width: 94vw;
     height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+.example-spacer {
+    flex: 1 1 auto;
+  }

@@ -1,12 +1,16 @@
 <mat-toolbar color="primary">
   <div class="tabManager">
-    <div class="tab" routerLink="/games/rock-paper-scissors">Rock, paper, scissors</div>
-    <div class="tab" routerLink="/games/tic-tac-toe">Tic, tac, toe</div>
-    <div class="tab" routerLink="/games/minesweeper">Minesweeper</div>
+    <div class="tab" [routerLink]="['/games/rock-paper-scissors', nick]">Rock, paper, scissors</div>
+    <div class="tab" [routerLink]="['/games/tic-tac-toe', nick]">Tic, tac, toe</div>
+    <div class="tab" [routerLink]="['/games/minesweeper', nick]">Minesweeper</div>
     <div class="tab" routerLink="developer">Developer</div>
     <div class="tab" routerLink="project">Project</div>
+    <button routerLink="">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      </button>
   </div>
 </mat-toolbar>
+<app-login *ngIf="changed == false" (nickEntered)="recieveNick($event)" ></app-login>
 <div class="routerContainer">
   <router-outlet></router-outlet>
 </div>

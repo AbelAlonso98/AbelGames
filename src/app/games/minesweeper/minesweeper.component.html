@@ -1,44 +1,13 @@
-<!--
-  <div class="test">
-  <app-minesweeper-square [clicked]="false" [value]=2></app-minesweeper-square>
-  <app-minesweeper-square [clicked]="true" [value]=-1></app-minesweeper-square>
-  <app-minesweeper-square [clicked]="true" [value]=2></app-minesweeper-square>
-</div>
--->
-
-<div class="master">
   <div class="game">
     <h1>{{msg}}</h1>
-    <div class="field">
+    <div class="field" *ngIf="!gameover">
       <div class="row" *ngFor="let row of content; let i = index;">
         <div class="space" *ngFor="let cell of row; let j = index;">
           <app-minesweeper-square [clicked]="spaces[i][j]" [value]="content[i][j]" (click)="step(i,j)"></app-minesweeper-square>
         </div>
       </div>
     </div>
-    <button mat-fab color="primary" [disabled]="gameover" (click)="ngOnInit()">
+    <button mat-fab color="primary" (click)="ngOnInit()">
       <mat-icon>refresh</mat-icon>
     </button>
   </div>
-</div>
-
-<!--
-<div class="master">
-    <div class="game">
-      <h1>{{msg}}</h1>
-      <div class="field">
-        <div class="row" *ngFor="let row of content; let i = index;">
-          <div class="space" *ngFor="let cell of row; let j = index;" (click)="step(i, j)">
-            <div class="step">
-              <h1 *ngIf="spaces[i][j] && content[i][j] !== -1">{{content[i][j]}}</h1>
-              <img *ngIf="spaces[i][j] && content[i][j] === -1" src="https://www.svgrepo.com/show/79567/bomb.svg">
-            </div>
-          </div>
-        </div>
-      </div>
-      <button mat-fab color="primary" [disabled]="gameover" (click)="ngOnInit()">
-        <mat-icon>refresh</mat-icon>
-      </button>
-    </div>
-  </div>
-  -->

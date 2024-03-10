@@ -1,0 +1,12 @@
+<div class="container"> 
+        <form (ngSubmit)="setName()">
+            <div class="login">
+                <mat-form-field appearance="outline">
+                    <mat-label>Insert your username</mat-label>
+                    <input matInput placeholder="Insert your name here." [(ngModel)]="nick" name="nick">
+                    <mat-icon matSuffix>alternate_email</mat-icon>
+                </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">Set name</button>
+        </div>
+    </form>
+</div>
