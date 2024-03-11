@@ -7,6 +7,7 @@ import { ProjectComponent } from './project/project.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MinesweeperComponent } from './games/minesweeper/minesweeper.component';
 import { TicTacToeComponent } from './games/tic-tac-toe/tic-tac-toe.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,9 @@ const routes: Routes = [
 },
 {
   path: 'project', component: ProjectComponent
+},
+{
+  path: 'portfolio', component: PortfolioComponent
 },
 {
   path: '', component: LandingPageComponent

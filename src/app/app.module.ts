@@ -21,6 +21,7 @@ import { DeveloperComponent } from './developer/developer.component';
 import { ProjectComponent } from './project/project.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { LoginComponent } from './login/login.component';
     ProjectComponent,
     LandingPageComponent,
     LoginComponent,
+    PortfolioComponent,
     
   ],
   imports: [

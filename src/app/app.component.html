@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="customToolbar">
   <div class="tabManager">
     <div class="tab" [routerLink]="['/games/rock-paper-scissors', nick]">Rock, paper, scissors</div>
     <div class="tab" [routerLink]="['/games/tic-tac-toe', nick]">Tic, tac, toe</div>
@@ -6,11 +6,11 @@
     <div class="tab" routerLink="developer">Developer</div>
     <div class="tab" routerLink="project">Project</div>
     <button routerLink="">
-    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
-      </button>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    </button>
   </div>
 </mat-toolbar>
-<app-login *ngIf="changed == false; else games" (nickEntered)="recieveNick($event)" ></app-login>
+<app-login *ngIf="changed == false; else games" (nickEntered)="recieveNick($event)"></app-login>
 
 
 <ng-template #games>
