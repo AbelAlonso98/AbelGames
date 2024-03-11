@@ -6,4 +6,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent {
+  
 }
