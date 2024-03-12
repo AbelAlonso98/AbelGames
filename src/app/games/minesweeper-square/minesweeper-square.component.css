@@ -6,6 +6,8 @@ img{
 .cell{
     width: 5vw;
     height: 5vw;
+    max-width: 50px;
+    max-height: 50px;
     background-color: #3F51B5;
     border: 1px solid black;
     display:flex;
